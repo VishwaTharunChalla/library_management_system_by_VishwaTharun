@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<h1 style="text-decoration: underline;">Simplelms</h1>
+<form method="post" action="{% url 'signin' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>{{ form.firstname.label_tag }}</td>
+            <td>{{ form.firstname }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.lastname.label_tag }}</td>
+            <td>{{ form.lastname }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.emailid.label_tag }}</td>
+            <td>{{ form.emailid }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="signup" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock content %}

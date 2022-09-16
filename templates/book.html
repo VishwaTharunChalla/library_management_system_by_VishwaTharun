@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1 style="text-decoration: underline;">Book Details</h1>
+    <h2>Book Title : {{book.title}}</h2>
+    <h2>Description : {{book.desc}}</h2>
+    <h2>Publisher : {{book.publisher.name}}</h2>
+    <h2>Author : {{book.author.name}}</h2>
+{% endblock content %}
